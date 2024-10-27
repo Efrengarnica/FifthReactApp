@@ -1,0 +1,19 @@
+nav{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    color: var(--highlight);
+    background-color: var(--bg);
+}
+nav>div{  /* Se le aplican estilos a los elemntos div dentro de nav */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
