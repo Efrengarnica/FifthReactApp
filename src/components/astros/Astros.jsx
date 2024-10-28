@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react'; //Para poder ocupar hook, un hook f
 import './Astros.css'
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
-
-
-
+import { v4 as uuidv4 } from 'uuid'
 
 function Astro(props){
    
@@ -43,7 +41,9 @@ function Astros(){
         <div className="astros-container">
             {   astro ? (
                 astro.map((astro) =>(
-                    <Astro astro={astro}/>
+                    <Astro 
+                    key= {uuidv4()}
+                    astro={astro}/>
                 ))
                 ) : (
                     <CircularProgress/>  //Esto es para que se aparezca uno icono de carga cuando la promesa tarde
