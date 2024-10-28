@@ -18,15 +18,21 @@ function Astro(props){
 function Astros(){
 
     const [astro, setAstro]= useState();   //Primer hook que estamos ocupando  //hook ¿que es un hook??, genero el primero despues el segundo
-    const URL= "https://api.open-notify.org/astros.json";
+    const URL= "/api/astros.json";
 
     useEffect(() => {  //Parace que aqui se va guardar el arreglo de info de la api
         
         async function fetchData() {
+          try{
             const response = await fetch(URL);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             const data= await response.json();
             setAstro(data.people);
-            console.log(astro)
+           }catch (error) {
+            console.error('Error fetching data:', error);
+          }
         }
         fetchData();
     }, []);//Para que se hagan las peticiones y se locolque alla arriba
