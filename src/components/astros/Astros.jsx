@@ -18,7 +18,7 @@ function Astro(props){
 function Astros(){
 
     const [astro, setAstro]= useState();   //Primer hook que estamos ocupando  //hook ¿que es un hook??, genero el primero despues el segundo
-    const URL= "/api/astros.json";
+    const URL= "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json";
 
     useEffect(() => {  //Parace que aqui se va guardar el arreglo de info de la api
         
